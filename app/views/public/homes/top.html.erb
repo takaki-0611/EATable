@@ -1,12 +1,12 @@
 <div id="CarouselExampleControls" class="carousel slide carousel-slide mx-auto my-5 border" data-ride="carousel">
   <div class="carousel-inner">
     <div class="cover-text">
-      <b><h1>Welcome Nagano Cake</h1>
+      <b><h1>EATable</h1>
       <br><br><br>
       <p class="text-center">このサイトは、予約サイトです<br><br>
         会員でない方も閲覧はできますが<br><br>
         予約には事前に
-        <u><%= link_to "会員登録", new_customer_registration_path %></u>
+        <u><%= link_to "会員登録", new_user_registration_path %></u>
         が必要になります</p></b>
     </div>
     <div class="carousel-item active">
@@ -32,11 +32,11 @@
 <div class="container new-item mb-3">
   <h2><b>お店</b></h2>
   <div class="row">
-    <% @items.last(4).each do |item| %>
+    <% @items.last(4).each do |restaurant| %>
       <%= render "item_each",item: item %>
     <% end %>
   </div>
   <div class="all-items-show-button text-right mt-3 mb-5">
-    <%= link_to "すべてのお店を見る>>", books_path %>
+    <%= link_to "すべてのお店を見る>>", restaurant_path %>
   </div>
 </div>
