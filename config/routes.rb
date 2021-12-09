@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users, only:[:index, :show, :edit, :update]
     resources :books, only:[:index, :show]
     resources :courses, only:[:index, :show, :edit, :create, :update, :destroy]
-    
+  end
 
   #user側
   devise_for :users, :controllers => {:sessions => 'users/sessions',
@@ -22,13 +22,14 @@ Rails.application.routes.draw do
       patch 'out'
     end
   end
-  resources :books, only:[:new, :create, :index, :show] do
-    collection do
-      post 'confirm'
-      get 'thanx'
+  resources :courses, only:[:index, :show] do
+    resources :books, only:[:new, :create, :index, :show] do
+      collection do
+        post 'confirm'
+        get 'thanx'
+      end
     end
   end
-  resources :courses, only:[:index, :show]
   resources :contacts, only:[:index] do
     collection do
       post 'confirm'

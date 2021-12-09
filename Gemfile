@@ -73,4 +73,5 @@ gem 'mailcatcher' #問い合わせメール送信
 gem 'jquery-rails' #css機能
 gem 'dotenv-rails' #環境変数を管理。パスワードや外部APIキーを環境変数として管理
 gem 'rubocop-rails' #Railsに関わる構文規則チェック
-gem 'simple_calendar', '~> 2.0' #カレンダー機能
+gem 'bootstrap3-datetimepicker-rails' #カレンダー
+gem 'momentjs-rails', '>= 2.9.0' #時間の入力欄

@@ -1,0 +1,36 @@
+<% provide(:title, "予約履歴一覧") %>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>予約履歴一覧</h2>
+    <% if @books.present? %>
+    <table class="table table-hover table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th><i class="fas fa-calender-day"></i>お名前</th>
+          <th>予約したお店</th>
+          <th>予約コース</th>
+          <th>予約日</th>
+          <th>時間</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+        <tr>
+          <td><%= book.user.name %></td>
+          <td><%= book.restaurant.name %></td>
+          <td><%= book.course.name %></td>
+          <td><%= book.book_date.strftime('%Y年%m月%d日') %></td>
+          <td><%= book.book_date.strftime('%X %p') %></td>
+          <td>
+            <%= link_to "予約情報詳細", book_path(book), class: "btn btn-success" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+    <p>予約がありません</p>
+    <% end %>
+  </div>
+</div>
