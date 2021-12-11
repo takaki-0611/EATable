@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   }
   root 'public/homes#top'
-  get 'home/about' => 'public/homes#about'
+  get '/about' => 'public/homes#about'
   resources :users, only:[:show, :edit, :update] do
     collection do
       get 'quit'
