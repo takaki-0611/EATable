@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   end
 
   #user側
-  devise_for :users, :controllers => {:sessions => 'users/sessions',
-    :registrations => 'users/registrations',
-    :passwords => 'users/passwords'
+  devise_for :users, :controllers => {:sessions => 'public/sessions',
+    :registrations => 'public/registrations',
+    :passwords => 'public/passwords'
   }
   root 'public/homes#top'
   get '/about' => 'public/homes#about'
