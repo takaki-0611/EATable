@@ -1,19 +1,16 @@
 <div class="container">
   <div class="row mx-auto">
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-5">
-      <%= attachment_image_tag @item, :image, :fill, 350, 350, class:"icon border", fallback: "no_image.jpg" %>
+      <%= attachment_image_tag @restaurant, :image, :fill, 350, 350, class:"icon border", fallback: "no_image.jpg" %>
     </div>
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-left pl-5 my-5">
       <h3><%= @restaurant.name %></h3>
       <p><%= @restaurant.body %></p><br><br><br><br>
       <% if @restaurant.is_active == true %>
-        <h4>¥<%= (@item.price * 1.1).to_i.to_s(:delimited, delimiter: ",") %> (税込)</h4>
-        <%= form_with model:@cart_item, url: cart_items_path, method: :post do |f| %>
-          <%= f.hidden_field :item_id, value: @item.id %>
-          <span class="mr-3">
-            <%= f.select :count, (1..20).to_a, include_blank: "人数選択" %>
-          </span>
-          <%= f.submit "カートに入れる", class:"btn btn-success" %>
+        <h4>¥<%= (@course.price).to_i.to_s(:delimited, delimiter: ",") %> (税込)</h4>
+        <%= form_with model:@course, url: courses_path, method: :post do |f| %>
+        <%= f.hidden_field :rest_id, value: @restaurant.id %>
+          <%= f.submit "予約に進む", class:"btn btn-success" %>
         <% end %>
       <% else %>
         <h4 class="text-danger">満席</h4>
