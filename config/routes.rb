@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       patch 'out'
     end
   end
+  resources :restaurants, only:[:index, :show]
   resources :courses, only:[:index, :show] do
     resources :books, only:[:new, :create, :index, :show] do
       collection do

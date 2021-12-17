@@ -67,6 +67,8 @@ gem 'devise-i18n-views' #devise導入時日本語化
 gem "refile", require: "refile/rails", github: 'manfe/refile' #画像投稿機能
 gem "refile-mini_magick" #画像投稿機能
 gem 'kaminari','~> 1.2.1' #ページネーション機能
+gem 'bootstrap', '~> 4.5'
+gem 'font-awesome-sass', '~> 5.13'
 gem 'activeadmin' #管理機能
 gem 'cancancan' #権限管理
 gem 'mailcatcher' #問い合わせメール送信

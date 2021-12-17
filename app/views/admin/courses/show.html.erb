@@ -1,2 +1,25 @@
-<h1>Admin::Courses#show,</h1>
-<p>Find me in app/views/admin/courses/show.html.erb</p>
+<% provide(:title, "コース詳細") %>
+<div class="container">
+  <h2 class="mt-5 text-center">コース詳細</h2>
+    <div class="row align-items-center m-5">
+    <div class="col-lg text-center mb-5">
+      <%= attachment_image_tag @course, :image, class:"icon", :size =>"50%x50%" %>
+    </div>
+    <div class="col-lg">
+      <table class="table item-table">
+        <tr>
+          <th nowrap>コース</th>
+          <td><%= @course.name %></td>
+        </tr>
+        <tr>
+          <th nowrap>価格</th>
+          <td><%= @course.total_payment %>円</td>
+        </tr>
+      </table>
+      <div class="d-flex justify-content-around">
+        <p><%= link_to "編集する", edit_admin_couurse_path(@course.id), class:"btn btn-success" %></p>
+        <p><%= link_to "コース一覧へ戻る", admin_courses_path, class:"btn btn-outline-secondary" %></p>
+      </div>
+    </div>
+  </div>
+</div>

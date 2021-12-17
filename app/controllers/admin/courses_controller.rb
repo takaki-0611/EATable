@@ -29,8 +29,10 @@ class Admin::CoursesController < ApplicationController
       render :index
     end
   end
+
   def destroy
   end
+
   private
 
   def courses_params
