@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   #admin側
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :users, only:[:index, :show, :edit, :update]
     resources :books, only:[:index, :show]
     resources :courses, only:[:index, :show, :edit, :create, :update, :destroy]
   end
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #user側
   devise_for :users, :controllers => {:sessions => 'public/sessions',
