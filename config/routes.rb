@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   #admin側
   namespace :admin do
     resources :users, only:[:index, :show, :edit, :update]
-    resources :books, only:[:index, :show]
-    resources :courses, only:[:index, :show, :edit, :create, :update, :destroy]
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
